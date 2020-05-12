@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tags</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="trabalho.css">
+ 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 	<script>
+  		$(function(){
+  			var paciente = 0;
+  	  		$("#adicionar").click(function(){
+  				var nome = $("#nome").val();
+  				var html = '<div id="bloco"'+paciente+'>'
+  					html += nome;
+  					html +='</div>';
+  					paciente++;
+  				$("#triagem").append(html);
+  				$( "#bloco" ).draggable();
+			});
+  		});
+  	</script>
+
+</head>
+<body>
+	<h1 id="texto">Seja bem vindo ao Hospital XYZ</h1>
+	<br><br>
+	<label for="Name" id="nomedopaciente">Insira o nome do paciente</label>
+	<input type="text" name="usuario" placeholder="Digite seu nome" id="nome">
+	<button type="button" id="adicionar" class="btn btn-secondary">Adicionar</button>
+	<div id="triagem">
+		<p>Analise</p>
+	</div>
+	<div id="verde">Ala Verde</div>
+	<div id="amarelo">Ala Amarelo</div>
+	<div id="vermelho">Ala Vermelho</div>
+</body>
+</html>
